@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.css';
+import PostList from './PostList/PostList';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1>Dynamic list of posts</h1>
+
+      <h1 className="app-heading">Dynamic list of posts</h1>
+      <PostList />
+
     </div>
   );
 }

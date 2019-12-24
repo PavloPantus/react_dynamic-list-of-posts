@@ -1,0 +1,122 @@
+@import 'reset';
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.posts {
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.input {
+  color: #ebff20;
+  background-color: cadetblue;
+
+  &::placeholder{
+    color: #ebff20;
+  }
+
+  &_search-in-posts {
+    height: 40px;
+    margin: 20px 0 20px 0;
+  }
+}
+
+.app-heading {
+  font-size: 30px;
+}
+
+.post-list__item {
+  margin-bottom: 30px;
+}
+
+.post {
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #325254;
+  opacity: 0.9;
+
+  &__title {
+    color: #0068a0;
+    margin-top: 20px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #dbffac;
+    margin-left: 30px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body {
+    font-size: 16px;
+    margin-top: 15px;
+    width: 750px;
+    background-color: #dbffac;
+    color: rgba(84, 6, 17, 0.79);
+    padding: 30px;
+    text-align: justify;
+    transition: all 2s;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgba(84, 6, 17, 0.79);
+      color: #dbffac;
+    }
+
+  }
+
+  &__author-info {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    align-self: flex-end;
+    margin-right: 30px;
+    background-color: #d8ffd5;
+    padding: 10px;
+  }
+
+}
+
+.comment {
+  &__author-info{
+    background-color: #d8ffd5;
+    width: 200px;
+    margin-left: 30px;
+
+  }
+
+  &__body {
+    font: 16px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    width: 700px;
+    background-color: aliceblue;
+    text-align: justify;
+    padding: 10px;
+  }
+}
+
+.highlighted {
+  border: 1px red solid;
+  background-color: yellow;
+}

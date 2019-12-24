@@ -35,16 +35,16 @@ function PostList() {
     setSearchQuery(text.trim().toLowerCase());
   };
 
-  const debouncer = (func, time) => {
+  const debounce = (func, delay) => {
     let timer;
 
-    return (event) => {
+    return (...args) => {
       clearTimeout(timer);
-      timer = setTimeout(func, time, event.target.value);
+      timer = setTimeout(func, delay, ...args);
     };
   };
 
-  const debouncedHandleInputChange = debouncer(handleInputChange, 1000);
+  const debouncedHandleInputChange = debounce(handleInputChange, 1000);
 
   return (
     isLoadedPosts
@@ -54,7 +54,7 @@ function PostList() {
             type="text"
             name="searchInPosts"
             className="input input_search-in-posts"
-            onChange={debouncedHandleInputChange}
+            onChange={event => debouncedHandleInputChange(event.target.value)}
             placeholder="type for searching"
           />
 

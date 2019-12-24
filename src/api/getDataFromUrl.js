@@ -1,8 +1,13 @@
-const getDataFromUrl = async(url) => {
+const getDataFromUrl = async(url, defaultData) => {
   const responsePromise = await fetch(url);
-  const data = await responsePromise.json();
 
-  return data;
+  if (responsePromise.ok) {
+    const data = await responsePromise.json();
+
+    return data;
+  }
+
+  return defaultData;
 };
 
 export default getDataFromUrl;

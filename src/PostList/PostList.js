@@ -13,9 +13,9 @@ function PostList() {
 
   const getPreparedPostsFromServer = async() => {
     const [posts, users, comments] = await Promise.all(
-      [getDataFromUrl(postsUrl),
-        getDataFromUrl(usersUrl),
-        getDataFromUrl(commentsUrl)]
+      [getDataFromUrl(postsUrl, []),
+        getDataFromUrl(usersUrl, []),
+        getDataFromUrl(commentsUrl, [])]
     );
 
     return posts.map(
